@@ -6,7 +6,7 @@ Makes the following changes:
  - Adds title="inventory_search" to the inventory_search text input.
  - Adds title="inventory_sort_by" to the inventory_sort_by select input.
  - Adds title="inventory_category_id" to the inventory_category_id select input.
-Version: 0.0.1
+Version: 0.0.2
 Author: David Lentz
 */
 
