@@ -51,6 +51,14 @@ function boise_state_wp_inventory_fix($content){
 		}
 	}
 
+	$tds = $dom->getElementsByTagName('td');
+	foreach($tds as $td){
+		$class = $td->getAttribute('class');
+		if($class == 'inventory_fob') {
+          $td->nodeValue = strip_tags($td->nodeValue);
+		}
+	}
+
 	// This is from here: http://stackoverflow.com/questions/27442075/issues-with-dom-parsing-a-partial-html
 	// ...and aims to prevent the additional DOCTYPE, HTML, and BODY tags that the previous saveHTML call adds:
 	$html = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace( array('<html>', '</html>', '<body>', '</body>'), array('', '', '', ''), $dom->saveHTML()));
