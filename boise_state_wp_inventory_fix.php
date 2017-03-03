@@ -6,7 +6,8 @@ Makes the following changes:
  - Adds title="inventory_search" to the inventory_search text input.
  - Adds title="inventory_sort_by" to the inventory_sort_by select input.
  - Adds title="inventory_category_id" to the inventory_category_id select input.
-Version: 0.0.2
+ - Strips the HREF tag from the fob/ISBN value in the results table. ISBN is often blank and an empty HREF is an a11y error.
+Version: 0.0.3
 Author: David Lentz
 */
 
