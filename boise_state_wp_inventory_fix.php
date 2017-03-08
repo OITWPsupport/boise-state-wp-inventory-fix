@@ -7,7 +7,9 @@ Makes the following changes:
  - Adds title="inventory_sort_by" to the inventory_sort_by select input.
  - Adds title="inventory_category_id" to the inventory_category_id select input.
  - Strips the HREF tag from the fob/ISBN value in the results table. ISBN is often blank and an empty HREF is an a11y error.
-Version: 0.0.3
+ - Adds id="inventory_sort_by" to the inventory_sort_by select input.
+ - Changes the label whose for attribute = 'inventory_sort' to for='inventory_sort_by'
+Version: 0.0.4
 Author: David Lentz
 */
 
@@ -47,8 +49,17 @@ function boise_state_wp_inventory_fix($content){
 		$name = $select->getAttribute('name');
 		if($name == 'inventory_sort_by') {
 			$select->setAttribute('title', 'inventory_sort_by');
+			$select->setAttribute('id', 'inventory_sort_by');
 		} else if($name == 'inventory_category_id') {
 			$select->setAttribute('title', 'inventory_category_id');
+		}
+	}
+
+	$labels = $dom->getElementsByTagName('label');
+	foreach($labels as $label){
+		$for = $label->getAttribute('for');
+		if($for == 'inventory_sort') {
+			$label->setAttribute('for', 'inventory_sort_by');
 		}
 	}
 
