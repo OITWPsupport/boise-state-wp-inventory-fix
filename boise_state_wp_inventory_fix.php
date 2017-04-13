@@ -2,6 +2,7 @@
 /*
 Plugin Name: Boise State WP Inventory Fix
 Description: Plugin for programmatically fixing minor accessibility issues introduced by the WP Inventory plugin.
+Plugin URI: https://github.com/OITWPsupport/boise-state-wp-inventory-fix/releases/latest
 Makes the following changes:
  - Adds title="inventory_search" to the inventory_search text input.
  - Adds title="inventory_sort_by" to the inventory_sort_by select input.
@@ -11,6 +12,7 @@ Makes the following changes:
  - Changes the label whose for attribute = 'inventory_sort' to for='inventory_sort_by'
 Version: 0.0.4
 Author: David Lentz
+Author URI: https://webguide.boisestate.edu/
 */
 
 defined( 'ABSPATH' ) or die( 'No hackers' );
